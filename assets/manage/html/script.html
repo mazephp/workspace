@@ -1,0 +1,88 @@
+<!-- 模态框（Modal） -->
+<div class="am-modal am-modal-alert" tabindex="-1" id="robin_modal">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd" id="robin_modal_title">提示框</div>
+    <div class="am-modal-bd" id="robin_modal_body">
+      提示信息
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn">确定</span>
+    </div>
+  </div>
+</div>
+
+<!-- amaze & jquery -->
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/polyfill/rem.min.js"></script>
+<script src="assets/js/polyfill/respond.min.js"></script>
+<script src="assets/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../../core/jquery.js"></script>
+<script src="../../core/amaze/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="../../core/amaze/js/app.js"></script>
+
+<!-- 引用seajs -->
+<script src="../../core/seajs/dist/sea.js"></script>
+
+<!-- 加载百度编辑器 -->
+<!-- 配置文件 -->
+<script type="text/javascript" src="../../core/editor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="../../core/editor/ueditor.all.min.js"></script>
+<!-- 实例化编辑器代码 -->
+<script type="text/javascript">
+$(function(){
+	var ue = UE.getEditor('container');
+});
+</script>
+
+<script>
+//后台通用的提示
+function msg(value)
+{
+	var url = '';
+	if(value.status == 2)
+	{
+		alert(value.msg);
+	}
+	else
+	{
+		if(value.msg.indexOf('http://') != -1)
+		{
+			url = value.msg;
+		}
+		else if($("#url").length)
+		{
+			url = $("#url").val();
+		}
+
+		if(url)
+		{
+			location.href = url;
+		}
+		else
+		{
+			location.reload();
+		}
+	}
+	
+	return;
+}
+//seajs 的简单配置
+seajs.config(
+{
+  base: "../../core/seajs/",
+  alias: 
+  {
+	  // "jquery": "../jquery.js"
+  }
+});
+
+// 加载入口模块
+seajs.use("../js/main")
+</script>

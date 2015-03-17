@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <filter>
+    <script src="../../core/jquery.js"></script>
+    <script src="../../core/core.js"></script>
+  </filter>
+  <script class="include" system="" path="" file="head">include()</script>
+
+ <body>
+
+    <script class="include" file="nav">include()</script>
+
+    <div class="am-cf admin-main">
+        <script class="include" file="menu">include()</script>
+
+<!-- content start -->
+<div class="admin-content">
+<form method="post" target="f1" class="form1 am-form">
+<input type="hidden" name="function" id="function" value="msg"/>
+<input type="hidden" name="url" id="url" />
+<input type="hidden" name="where_id" id="where_id" />
+<input type="hidden" name="key" id="key" />
+<input type="hidden" name="table" id="table" />
+<iframe id="f1" name="f1" style="display:none;"></iframe>
+  <div class="am-cf am-padding">
+    <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg" id="list-name">表单</strong> / <small id="list-desc">form</small></div>
+  </div>
+
+  <div class="am-tabs am-margin" data-am-tabs>
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+      <li class="am-active"><a href="#tab1">基本信息</a></li>
+    </ul>
+
+    <div class="am-tabs-bd">
+      <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+        
+        <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+              文章标题
+            </div>
+            <div class="am-u-sm-8 am-u-md-4">
+              <input type="text" class="am-input-sm">
+            </div>
+            <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="am-margin">
+    <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+    <button type="button" class="am-btn am-btn-primary am-btn-xs" onclick="msg({status:1,msg:'yes'})">放弃保存</button>
+  </div>
+</form>
+</div>
+<!-- content end -->
+
+</div>
+
+    <script class="include" file="foot">include()</script>
+
+    <script class="include" file="script">include()</script>
+    
+  </body>
+</html>
