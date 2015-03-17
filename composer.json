@@ -2,11 +2,11 @@
 	"repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/mazephp/lib"
+            "url": "https://github.com/mazephp/library"
         }
     ],
     "require": {
-    	"mazephp/lib": "dev-master",
-        "sunra/php-simple-html-dom-parser": "v1.5.0",
+    	"mazephp/library": "dev-master",
+        "sunra/php-simple-html-dom-parser": "v1.5.0"
     }
-}s
+}
